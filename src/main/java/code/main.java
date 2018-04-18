@@ -6,17 +6,16 @@ public class main {
 
 	public static void main(String[] args) {
 
-		Account person1 = new Account("Marcell", "Illes", 001);
-		Account person2 = new Account("Nabeel", "Muja", 002);
+		Account person1 = new Account("Marcell", "Illes", 1);
+		Account person2 = new Account("Nabeel", "Muja", 2);
 		
 		Service map = new Service();
 		
 		map.addAccount(person1);
 		map.addAccount(person2);
 		
-		System.out.println(map);
+		System.out.println(map.retrieve(1));
 		
-
 	}
 
 }

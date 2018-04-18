@@ -10,27 +10,21 @@ public class Service {
 
 	public void addAccount(Account newAccount) {
 		
-		hmap.put(uniqueID, newAccount);
 		uniqueID++;
+		hmap.put(uniqueID, newAccount);
 
 	}
 
-	public void retrieveAccount(int SelectID) {
-		
-		hmap.get(SelectID);
-
-	}
 	
 	public void removeAccount (int selectID) {
 		
 		hmap.remove(selectID);
 	}
 	
-	public String toString (Service service) {
+	
+	public String retrieve (int selectID) {
 		
-		return "I added: " + service;
-		
-		
+		return "First name: " + hmap.get(selectID).getFirstName() + " Last name: " + hmap.get(selectID).getLastName() + " Acc number: " + hmap.get(selectID).getAccountNumber();
 	}
 
 }
