@@ -1,55 +1,50 @@
 package code;
 
 import java.util.HashMap;
-import java.util.Random;
 
 public class Service {
-
+	
 	private HashMap<Integer, Account> hmap = new HashMap<Integer, Account>();
 
-	HashMap<Integer, Account> getHmap() {
+	 HashMap<Integer, Account> getHmap() {
 		return hmap;
 	}
 
-	public void setHmap(HashMap<Integer, Account> hmap) {
-		this.hmap = hmap;
-	}
 
+//	public void setHmap(HashMap<Integer, Account> hmap) {
+//		this.hmap = hmap;
+//	}
+
+
+	private static int uniqueID = 0;
 
 	public void addAccount(Account newAccount) {
-		hmap.put(newAccount.getAccountNumber(), newAccount);
+		
+		uniqueID++;
+		hmap.put(uniqueID, newAccount);
 
 	}
 
-	public void removeAccount(int accNum) {
-
-		boolean uniqueAccNum = hmap.containsKey(accNum);
-
-		if (uniqueAccNum) {
-
-			hmap.remove(accNum);
+	
+	public void removeAccount (int selectID) {
+		
+		boolean uniqueIDexists = hmap.containsKey(selectID);
+		
+		
+		if (uniqueIDexists) {
+		hmap.remove(selectID);
 		}
 	}
-
-	public Account retrieve1(int accNum) {
-
-		return hmap.get(accNum);
-	}
-
-	public String retrieve(int accNum) {
-
-		return "First name: " + hmap.get(accNum).getFirstName() + " Last name: " + hmap.get(accNum).getLastName()
-				+ " Acc number: " + hmap.get(accNum).getAccountNumber();
+	
+	public Account retrieve1 (int selectID) {
+		
+		return hmap.get(selectID);
 	}
 	
-	public int generateAccNum() {
-		Random rand = new Random();
-		int number;
-		do {
-			number = rand.nextInt(10000) + 1;
-		} while(hmap.containsKey(number));
+	
+	public String retrieve (int selectID) {
 		
-		return number;
+		return "First name: " + hmap.get(selectID).getFirstName() + " Last name: " + hmap.get(selectID).getLastName() + " Acc number: " + hmap.get(selectID).getAccountNumber();
 	}
 
 }

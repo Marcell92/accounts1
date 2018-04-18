@@ -11,7 +11,7 @@ public class testAcc {
 	public void addAccount() {
 
 		Service testService = new Service();
-		Account testing = new Account("jon", "doe", testService.generateAccNum());
+		Account testing = new Account("jon", "doe", 4);
 		testService.addAccount(testing);
 		assertEquals(testService.getHmap().size(), 1);
 
@@ -21,9 +21,9 @@ public class testAcc {
 	public void removeAccount() {
 		
 		Service testService1 = new Service();
-		Account testing1 = new Account("jack", "doel", testService1.generateAccNum());
+		Account testing1 = new Account("jack", "doel", 5);
 		testService1.addAccount(testing1);
-		testService1.removeAccount(testing1.getAccountNumber());
+		testService1.removeAccount(2);
 		assertEquals(testService1.getHmap().size(), 0);
 
 	}
@@ -34,7 +34,7 @@ public class testAcc {
 		Account testing2 = new Account("tom", "dop", 6);
 		Service testService2 = new Service();
 		testService2.addAccount(testing2);
-		assertEquals(testing2, testService2.retrieve1(testing2.getAccountNumber()));
+		assertEquals(testing2, testService2.retrieve1(1));
 
 	}
 	

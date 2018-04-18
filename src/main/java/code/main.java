@@ -11,16 +11,16 @@ public class main {
 		
 		Service map = new Service();
 		
-		Account person1 = new Account("Marcell", "Illes", map.generateAccNum());
-		Account person2 = new Account("Nabeel", "Muja", map.generateAccNum());
+		Account person1 = new Account("Marcell", "Illes", 1);
+		Account person2 = new Account("Nabeel", "Muja", 2);
 
 		map.addAccount(person1);
 		map.addAccount(person2);
 
-		System.out.println(map.retrieve(person2.getAccountNumber()));
-		System.out.println(map.retrieve(person1.getAccountNumber()));
+		System.out.println(map.retrieve(1));
+		System.out.println(map.retrieve(2));
 		
-		map.removeAccount(person1.getAccountNumber());
+		map.removeAccount(1);
 
 		Gson gson = new Gson();
 		String json = gson.toJson(map.getHmap());
@@ -28,12 +28,5 @@ public class main {
 
 	}
 	
-//	public void gson() {
-//		
-//		Gson gson = new Gson();
-//		String json = gson.toJson(map.getHmap());
-//		System.out.println(json);
-//		
-//	}
 
 }
