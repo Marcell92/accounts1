@@ -6,6 +6,16 @@ public class Service {
 	
 	HashMap<Integer, Account> hmap = new HashMap<Integer, Account>();
 
+	public HashMap<Integer, Account> getHmap() {
+		return hmap;
+	}
+
+
+	public void setHmap(HashMap<Integer, Account> hmap) {
+		this.hmap = hmap;
+	}
+
+
 	private static int uniqueID = 0;
 
 	public void addAccount(Account newAccount) {

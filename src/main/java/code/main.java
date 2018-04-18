@@ -14,7 +14,14 @@ public class main {
 		map.addAccount(person1);
 		map.addAccount(person2);
 		
+		
+		System.out.println(map.retrieve(2));
+		
+//		map.removeAccount(1);
+		
 		System.out.println(map.retrieve(1));
+		
+		
 		
 	}
 
