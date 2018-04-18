@@ -23,7 +23,7 @@ public class testAcc {
 		Service testService1 = new Service();
 		Account testing1 = new Account("jack", "doel", 5);
 		testService1.addAccount(testing1);
-		testService1.removeAccount(2);
+		testService1.removeAccount(1);
 		assertEquals(testService1.getHmap().size(), 0);
 
 	}

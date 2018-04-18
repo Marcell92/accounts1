@@ -16,7 +16,7 @@ public class Service {
 //	}
 
 
-	private static int uniqueID = 0;
+	private int uniqueID = 0;
 
 	public void addAccount(Account newAccount) {
 		
