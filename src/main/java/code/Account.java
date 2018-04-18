@@ -17,24 +17,24 @@ public class Account {
 		return lastName;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+//	public void setLastName(String lastName) {
+//		this.lastName = lastName;
+//	}
 
 	public String getFirstName() {
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+//	public void setFirstName(String firstName) {
+//		this.firstName = firstName;
+//	}
 
 	public int getAccountNumber() {
 		return AccountNumber;
 	}
 
-	public void setAccountNumber(int accountNumber) {
-		AccountNumber = accountNumber;
-	}
+//	public void setAccountNumber(int accountNumber) {
+//		AccountNumber = accountNumber;
+//	}
 
 }

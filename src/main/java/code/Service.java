@@ -1,45 +1,55 @@
 package code;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class Service {
-	
-	HashMap<Integer, Account> hmap = new HashMap<Integer, Account>();
 
-	public HashMap<Integer, Account> getHmap() {
+	private HashMap<Integer, Account> hmap = new HashMap<Integer, Account>();
+
+	HashMap<Integer, Account> getHmap() {
 		return hmap;
 	}
-
 
 	public void setHmap(HashMap<Integer, Account> hmap) {
 		this.hmap = hmap;
 	}
 
 
-	private static int uniqueID = 0;
-
 	public void addAccount(Account newAccount) {
-		
-		uniqueID++;
-		hmap.put(uniqueID, newAccount);
+		hmap.put(newAccount.getAccountNumber(), newAccount);
 
 	}
 
-	
-	public void removeAccount (int selectID) {
-		
-		hmap.remove(selectID);
+	public void removeAccount(int accNum) {
+
+		boolean uniqueAccNum = hmap.containsKey(accNum);
+
+		if (uniqueAccNum) {
+
+			hmap.remove(accNum);
+		}
+	}
+
+	public Account retrieve1(int accNum) {
+
+		return hmap.get(accNum);
+	}
+
+	public String retrieve(int accNum) {
+
+		return "First name: " + hmap.get(accNum).getFirstName() + " Last name: " + hmap.get(accNum).getLastName()
+				+ " Acc number: " + hmap.get(accNum).getAccountNumber();
 	}
 	
-	public Account retrieve1 (int selectID) {
+	public int generateAccNum() {
+		Random rand = new Random();
+		int number;
+		do {
+			number = rand.nextInt(10000) + 1;
+		} while(hmap.containsKey(number));
 		
-		return hmap.get(selectID);
-	}
-	
-	
-	public String retrieve (int selectID) {
-		
-		return "First name: " + hmap.get(selectID).getFirstName() + " Last name: " + hmap.get(selectID).getLastName() + " Acc number: " + hmap.get(selectID).getAccountNumber();
+		return number;
 	}
 
 }
