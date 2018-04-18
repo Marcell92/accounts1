@@ -22,25 +22,24 @@ public class testAcc {
 		Account testing1 = new Account("jack", "doel", 5);
 		Service testService1 = new Service();
 		testService1.addAccount(testing1);
-		testService1.removeAccount(1);
+		testService1.removeAccount(2);
 		assertEquals(testService1.getHmap().size(),0);
 
 	}
 	
 	@Test
-	public void retrieve() {
+	public void retrieve1() {
 		
 		Account testing2 = new Account("tom", "dop", 6);
 		Service testService2 = new Service();
 		testService2.addAccount(testing2);
-		assertEquals(testService2.getHmap().size(),1);
-		
+		assertEquals(testing2, testService2.retrieve1(1));
+	
 	}
 	
 	
 	
 	
-	
-	
-
 }
+
+

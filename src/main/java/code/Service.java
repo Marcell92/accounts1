@@ -31,6 +31,11 @@ public class Service {
 		hmap.remove(selectID);
 	}
 	
+	public Account retrieve1 (int selectID) {
+		
+		return hmap.get(selectID);
+	}
+	
 	
 	public String retrieve (int selectID) {
 		
