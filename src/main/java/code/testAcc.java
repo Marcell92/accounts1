@@ -49,7 +49,20 @@ public class testAcc {
 		String actual = util.getJson(service.getHmap());
 		assertEquals(actual, compare);
 }
+	private Service accountmap; 
+	@Test
+	public void retrieve2() {
+		
+		Account account1 = new Account ("John", "Bacon", "9");
+		Account account2 = new Account ("John", "Bacon", "9");
+		accountmap = new Service();
+		accountmap.addAccount(account1);
+		accountmap.addAccount(account2);
+		int expectedValue = 2;
+		int actualValue = accountmap.retrieve2("John");
+		assertEquals(expectedValue, actualValue);
 	
+}
 	
 
 }
