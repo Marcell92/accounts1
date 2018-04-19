@@ -4,9 +4,9 @@ public class Account {
 
 	private String firstName;
 	private String lastName;
-	private int AccountNumber;
+	private String AccountNumber;
 
-	public Account(String firstName, String lastName, int AccountNumber) {
+	public Account(String firstName, String lastName, String AccountNumber) {
 
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -29,7 +29,7 @@ public class Account {
 //		this.firstName = firstName;
 //	}
 
-	public int getAccountNumber() {
+	public String getAccountNumber() {
 		return AccountNumber;
 	}
 

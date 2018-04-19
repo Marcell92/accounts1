@@ -11,8 +11,8 @@ public class main {
 		
 		Service map = new Service();
 		
-		Account person1 = new Account("Marcell", "Illes", 1);
-		Account person2 = new Account("Nabeel", "Muja", 2);
+		Account person1 = new Account("Marcell", "Illes", "1");
+		Account person2 = new Account("Nabeel", "Muja", "2");
 
 		map.addAccount(person1);
 		map.addAccount(person2);
@@ -21,6 +21,10 @@ public class main {
 		System.out.println(map.retrieve(2));
 		
 		map.removeAccount(1);
+		
+		Json util = new Json();
+    	String json = util.getJson(map.getHmap());
+    	System.out.println(json);
 	}
 	
 
