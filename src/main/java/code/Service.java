@@ -57,5 +57,9 @@ public class Service {
 		}
 		return count;
 	}
+	
+	public int retrieve3(String name) {		
+		return (int) hmap.values().stream().filter(example -> name.equals(example.getFirstName())).count();
+}
 
 }
