@@ -21,11 +21,6 @@ public class main {
 		System.out.println(map.retrieve(2));
 		
 		map.removeAccount(1);
-
-		Gson gson = new Gson();
-		String json = gson.toJson(map.getHmap());
-		System.out.println(json);
-
 	}
 	
 
